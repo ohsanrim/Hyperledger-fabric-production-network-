@@ -1,2 +1,40 @@
-[34m2021-04-02 10:56:03.177 KST [channelCmd] InitCmdFactory -> INFO 001[0m Endorser and orderer connections initialized
-[34m2021-04-02 10:56:03.212 KST [channelCmd] update -> INFO 002[0m Successfully submitted channel update
+[34m2021-04-09 05:24:07.270 UTC 0001 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer:
+ Version: 2.4.0
+ Commit SHA: 82096464d
+ Go version: go1.16
+ OS/Arch: linux/amd64
+ Chaincode:
+  Base Docker Label: org.hyperledger.fabric
+  Docker Namespace: hyperledger
+[34m2021-04-09 05:24:07.270 UTC 0002 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Auto-detected peer address: 10.10.10.12:7051
+[34m2021-04-09 05:24:07.270 UTC 0003 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Returning peer0.org1.wizchain.net:7051
+[34m2021-04-09 05:24:07.271 UTC 0004 INFO[0m [nodeCmd] [34;1minitGrpcSemaphores[0m -> concurrency limit for endorser service is 2500
+[34m2021-04-09 05:24:07.271 UTC 0005 INFO[0m [nodeCmd] [34;1minitGrpcSemaphores[0m -> concurrency limit for deliver service is 2500
+[34m2021-04-09 05:24:07.271 UTC 0006 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with TLS enabled
+[34m2021-04-09 05:24:07.280 UTC 0007 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2022-04-09 05:24:00 +0000 UTC
+[34m2021-04-09 05:24:07.280 UTC 0008 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The server TLS certificate will expire on 2022-04-09 05:24:00 +0000 UTC
+[34m2021-04-09 05:24:07.280 UTC 0009 INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initializing LedgerMgr
+[34m2021-04-09 05:24:07.395 UTC 000a INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initialized LedgerMgr
+[34m2021-04-09 05:24:07.398 UTC 000b INFO[0m [gossip.service] [34;1mNew[0m -> Initialize gossip with endpoint peer0.org1.wizchain.net:7051
+[34m2021-04-09 05:24:07.400 UTC 000c INFO[0m [gossip.gossip] [34;1mNew[0m -> Creating gossip service with self membership of Endpoint: peer0.org1.wizchain.net:7051, InternalEndpoint: peer0.org1.wizchain.net:7051, PKI-ID: 6cd9686142c73b15fb5357ebeb03c70b7b9f2cf312e61bc2503fafa8991fde48, Metadata: 
+[34m2021-04-09 05:24:07.401 UTC 000d INFO[0m [lifecycle] [34;1mInitializeLocalChaincodes[0m -> Initialized lifecycle cache with 0 already installed chaincodes
+[34m2021-04-09 05:24:07.401 UTC 000e INFO[0m [gossip.gossip] [34;1mstart[0m -> Gossip instance peer0.org1.wizchain.net:7051 started
+[34m2021-04-09 05:24:07.402 UTC 000f INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Entering computeChaincodeEndpoint with peerHostname: peer0.org1.wizchain.net
+[34m2021-04-09 05:24:07.402 UTC 0010 INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Exit with ccEndpoint: peer0.org1.wizchain.net:7052
+[34m2021-04-09 05:24:07.405 UTC 0011 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'lscc'
+[34m2021-04-09 05:24:07.406 UTC 0012 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'cscc'
+[34m2021-04-09 05:24:07.406 UTC 0013 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'qscc'
+[34m2021-04-09 05:24:07.406 UTC 0014 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode '_lifecycle'
+[34m2021-04-09 05:24:07.406 UTC 0015 INFO[0m [nodeCmd] [34;1mserve[0m -> Deployed system chaincodes
+[34m2021-04-09 05:24:07.407 UTC 0016 INFO[0m [discovery] [34;1mNewService[0m -> Created with config TLS: true, authCacheMaxSize: 1000, authCachePurgeRatio: 0.750000
+[34m2021-04-09 05:24:07.407 UTC 0017 INFO[0m [nodeCmd] [34;1mserve[0m -> Discovery service activated
+[34m2021-04-09 05:24:07.407 UTC 0018 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with ID=[peer0.org1.wizchain.net], network ID=[peer0.org1.wizchain.net], address=[peer0.org1.wizchain.net:7051]
+[34m2021-04-09 05:24:07.407 UTC 0019 INFO[0m [nodeCmd] [34;1mserve[0m -> Started peer with ID=[peer0.org1.wizchain.net], network ID=[peer0.org1.wizchain.net], address=[peer0.org1.wizchain.net:7051]
+[34m2021-04-09 05:24:07.407 UTC 001a INFO[0m [kvledger] [34;1mLoadPreResetHeight[0m -> Loading prereset height from path [/tmp/hyperledger/production/ledgersData/chains]
+[34m2021-04-09 05:24:07.407 UTC 001b INFO[0m [blkstorage] [34;1mpreResetHtFiles[0m -> No active channels passed
+[34m2021-04-09 05:33:04.140 UTC 001c INFO[0m [nodeCmd] [34;1mfunc1[0m -> Received signal: 15 (terminated)
+[34m2021-04-09 05:33:04.140 UTC 001d INFO[0m [gossip.gossip] [34;1mStop[0m -> Stopping gossip
+[34m2021-04-09 05:33:04.140 UTC 001e INFO[0m [gossip.discovery] [34;1mStop[0m -> Stopping
+[34m2021-04-09 05:33:04.140 UTC 001f INFO[0m [gossip.discovery] [34;1mStop[0m -> Stopped
+[34m2021-04-09 05:33:04.140 UTC 0020 INFO[0m [gossip.comm] [34;1mStop[0m -> Stopping
+[34m2021-04-09 05:33:04.140 UTC 0021 INFO[0m [gossip.comm] [34;1mStop[0m -> Stopped
