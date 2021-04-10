@@ -19,25 +19,36 @@ function networkUp(){
   if [  "$CRYPTO" == "Certificate Authorities" ]; then
     #start with CA
     if [ "$TYPE" == "orderer0" ]; then
+    
       cp $HOME/testnet/peer/org1/peer0/core.yaml $HOME/testnet
+      
       ./crypto-config/fabric-ca/registerEnroll.sh all
+      
       configtxgen -profile TwoOrgsOrdererGenesis -channelID system-channel -outputBlock system-genesis-block/genesis.block
-      orderer start
+      
+      #orderer start
     elif [ "$TYPE" == "peer0" ]; then
+    
       ./crypto-config/fabric-ca/registerEnroll.sh org1
+      
       cp $HOME/testnet/peer/org1/peer0/core.yaml $HOME/testnet
-      peer node start >&log.txt
+      
     elif [ "$TYPE" == "peer1" ]; then
+    
       ./crypto-config/fabric-ca/registerEnroll.sh org1
+      
       cp $HOME/testnet/peer/org1/peer1/core.yaml $HOME/testnet
-      peer node start >&log.txt
+      
     elif [ "$TYPE" == "peer2" ]; then
+    
       ./crypto-config/fabric-ca/registerEnroll.sh org2
+      
       cp $HOME/testnet/peer/org2/peer2/core.yaml $HOME/testnet
-      peer node start >&log.txt 
+      
     elif [ "$TYPE" == "peer3" ]; then 
+    
       ./crypto-config/fabric-ca/registerEnroll.sh $TYPE
-      peer node start >&log.txt
+      
     elif [ "$TYPE" == "FABRIC_CA" ]; then
     
 
@@ -45,7 +56,7 @@ function networkUp(){
     
     #start tls_ca
     infoln "start tls_ca server..."
-    ./crypto-config/fabric-ca/registerEnrollCA/registerEnrollCA1.sh
+    ./crypto-config/fabric-ca/registerEnrollCA/startCA.sh tlsCA
     
     #start root_ca
     while :
@@ -57,7 +68,7 @@ function networkUp(){
       fi
     done
     infoln "start root_ca server..."
-    ./crypto-config/fabric-ca/registerEnrollCA/registerEnrollCA2.sh
+    ./crypto-config/fabric-ca/registerEnrollCA/startCA.sh rootCA
 
     #start org1_ca
     while :
@@ -69,16 +80,10 @@ function networkUp(){
       fi
     done
     infoln "start org1_ca server..."
-    ./crypto-config/fabric-ca/registerEnrollCA/registerEnrollCA3.sh
-    #start org2_ca
-    infoln "start org2_ca server..."
-    ./crypto-config/fabric-ca/registerEnrollCA/registerEnrollCA4.sh
-    #start ordererOrg_ca
-    infoln "start ordererOrg_ca server..."
-    ./crypto-config/fabric-ca/registerEnrollCA/registerEnrollCA5.sh
+     ./crypto-config/fabric-ca/registerEnrollCA/startCA.sh orgCA
     
     infoln "Generating certificates using Fabric CA"
-    . crypto-config/fabric-ca/registerEnrollCA.sh
+    . crypto-config/fabric-ca/registerEnrollCA.sh 
 
   while :
     do
@@ -108,9 +113,7 @@ function networkUp(){
     docker ps -a
     
     ./transport.sh
-    if [ $? -ne 0 ]; then
-      fatalln "Unable to start network"
-    fi
+    
   fi
        
   elif [ "$CRYPTO" == "cryptogen" ]; then
