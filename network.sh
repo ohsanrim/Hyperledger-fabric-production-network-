@@ -56,7 +56,7 @@ function networkUp(){
     
     #start tls_ca
     infoln "start tls_ca server..."
-    ./crypto-config/fabric-ca/registerEnrollCA/startCA.sh tlsCA
+    ./crypto-config/fabric-ca/startCA.sh tlsCA
     
     #start root_ca
     while :
@@ -68,7 +68,7 @@ function networkUp(){
       fi
     done
     infoln "start root_ca server..."
-    ./crypto-config/fabric-ca/registerEnrollCA/startCA.sh rootCA
+    ./crypto-config/fabric-ca/startCA.sh rootCA
 
     #start org1_ca
     while :
@@ -80,7 +80,7 @@ function networkUp(){
       fi
     done
     infoln "start org1_ca server..."
-     ./crypto-config/fabric-ca/registerEnrollCA/startCA.sh orgCA
+     ./crypto-config/fabric-ca/startCA.sh orgCA
     
     infoln "Generating certificates using Fabric CA"
     . crypto-config/fabric-ca/registerEnrollCA.sh 
