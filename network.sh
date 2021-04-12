@@ -56,7 +56,39 @@ function networkUp(){
     
     #start tls_ca
     infoln "start tls_ca server..."
-    ./crypto-config/fabric-ca/startCA.sh tlsCA
+#    ./crypto-config/fabric-ca/startCA.sh tlsCA
+    
+    #start root_ca
+#    while :
+#    do
+#      if [ ! -f "$HOME/testnet/crypto-config/fabric-ca/tls/tls-cert.pem" ]; then
+#        sleep 1
+#      else
+ #       break
+#      fi
+#    done
+#    infoln "start root_ca server..."
+#    ./crypto-config/fabric-ca/startCA.sh rootCA
+#
+#    #start org1_ca
+#    while :
+#    do
+#      if [ ! -f "$HOME/testnet/crypto-config/fabric-ca/root/ca-cert.pem" ]; then
+#        sleep 1
+#      else
+#        break
+#      fi
+#    done
+#    infoln "start org1_ca server..."
+#     ./crypto-config/fabric-ca/startCA.sh orgCA
+ #   
+ #   infoln "Generating certificates using Fabric CA"
+ #   . crypto-config/fabric-ca/registerEnrollCA.sh 
+#
+
+    #start tls_ca
+    infoln "start tls_ca server..."
+    ./crypto-config/fabric-ca/registerEnrollCA/registerEnrollCA1.sh
     
     #start root_ca
     while :
@@ -68,7 +100,7 @@ function networkUp(){
       fi
     done
     infoln "start root_ca server..."
-    ./crypto-config/fabric-ca/startCA.sh rootCA
+    ./crypto-config/fabric-ca/registerEnrollCA/registerEnrollCA2.sh
 
     #start org1_ca
     while :
@@ -80,10 +112,16 @@ function networkUp(){
       fi
     done
     infoln "start org1_ca server..."
-     ./crypto-config/fabric-ca/startCA.sh orgCA
+    ./crypto-config/fabric-ca/registerEnrollCA/registerEnrollCA3.sh
+    #start org2_ca
+    infoln "start org2_ca server..."
+    ./crypto-config/fabric-ca/registerEnrollCA/registerEnrollCA4.sh
+    #start ordererOrg_ca
+    infoln "start ordererOrg_ca server..."
+    ./crypto-config/fabric-ca/registerEnrollCA/registerEnrollCA5.sh
     
     infoln "Generating certificates using Fabric CA"
-    . crypto-config/fabric-ca/registerEnrollCA.sh 
+    . crypto-config/fabric-ca/registerEnrollCA.sh
 
   while :
     do
@@ -93,6 +131,8 @@ function networkUp(){
         break
       fi
     done
+
+
 
     infoln "Creating TLS Identities"
 
