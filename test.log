@@ -1,5 +1,5 @@
-[34m2021-04-10 19:12:00.992 KST [localconfig] completeInitialization -> INFO 001[0m Kafka.Version unset, setting to 0.10.2.0
-[34m2021-04-10 19:12:00.993 KST [orderer.common.server] prettyPrintStruct -> INFO 002[0m Orderer config values:
+[34m2021-04-12 13:04:08.644 KST [localconfig] completeInitialization -> INFO 001[0m Kafka.Version unset, setting to 0.10.2.0
+[34m2021-04-12 13:04:08.645 KST [orderer.common.server] prettyPrintStruct -> INFO 002[0m Orderer config values:
 	General.ListenAddress = "orderer0.wizchain.net"
 	General.ListenPort = 7050
 	General.TLS.Enabled = true
@@ -91,5 +91,5 @@
 	Metrics.Statsd.Prefix = ""
 	ChannelParticipation.Enabled = false
 	ChannelParticipation.RemoveStorage = false
-[34m2021-04-10 19:12:01.004 KST [orderer.common.server] initializeServerConfig -> INFO 003[0m Starting orderer with TLS enabled
-[35m2021-04-10 19:12:01.005 KST [orderer.common.server] initializeGrpcServer -> FATA 004[0m Failed to listen: listen tcp 10.0.2.31:7050: bind: cannot assign requested address
+[34m2021-04-12 13:04:08.654 KST [orderer.common.server] initializeServerConfig -> INFO 003[0m Starting orderer with TLS enabled
+[35m2021-04-12 13:04:08.656 KST [orderer.common.server] initializeGrpcServer -> FATA 004[0m Failed to listen: listen tcp 10.0.2.31:7050: bind: address already in use
