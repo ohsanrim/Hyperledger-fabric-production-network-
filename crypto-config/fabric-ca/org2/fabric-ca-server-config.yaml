@@ -244,7 +244,7 @@ ldap:
 #############################################################################
 affiliations:
    org1:
-      - department
+      - department1
       - department2
    org2:
       - department1

@@ -67,27 +67,27 @@ FABRIC_CFG_PATH=${PWD}
 infoln "Generating channel create transaction '${CHANNEL_NAME}.tx'"
 createChannelTx
 
-FABRIC_CFG_PATH=$PWD
-BLOCKFILE="./channel-artifacts/${CHANNEL_NAME}.block"
+#FABRIC_CFG_PATH=$PWD
+#BLOCKFILE="./channel-artifacts/${CHANNEL_NAME}.block"
 
 ## Create channelf
-infoln "Creating channel ${CHANNEL_NAME}"
-createChannel
-successln "Channel '$CHANNEL_NAME' created"
+#infoln "Creating channel ${CHANNEL_NAME}"
+#createChannel
+#successln "Channel '$CHANNEL_NAME' created"
 
 ## Join all the peers to the channel
-infoln "Joining org1 peer0 to the channel..."
-joinChannel 0
-infoln "Joining org1 peer1 to the channel..."
-joinChannel 1
-infoln "Joining org2 peer2 to the channel..."
-joinChannel 2
+#infoln "Joining org1 peer0 to the channel..."
+#joinChannel 0
+#infoln "Joining org1 peer1 to the channel..."
+#joinChannel 1
+#infoln "Joining org2 peer2 to the channel..."
+#joinChannel 2
 
 
 ## Set the anchor peers for each org in the channel
-infoln "Setting anchor peer for org1..."
-setAnchorPeer 0
-infoln "Setting anchor peer for org2..."
-setAnchorPeer 2
+#infoln "Setting anchor peer for org1..."
+#setAnchorPeer 0
+#infoln "Setting anchor peer for org2..."
+#setAnchorPeer 2
 
 successln "Channel '$CHANNEL_NAME' joined"
