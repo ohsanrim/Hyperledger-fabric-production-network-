@@ -27,7 +27,7 @@ PeerOrgs:
       Count: 2
       Start: 2
       SANS:
-        - peer2.org2.wizchain.net
+        - peer0.org2.wizchain.net
         - peer3.org2.wizchain.net
     Users: 
       Count: 1     

@@ -24,7 +24,7 @@ createAnchorPeerUpdate() {
     HOST="peer1.org1.wizchain.net"
     PORT=7051
   elif [ $ORG -eq 2 ]; then
-    HOST="peer2.org2.wizchain.net"
+    HOST="peer0.org2.wizchain.net"
     PORT=7051
   elif [ $ORG -eq 3 ]; then
     HOST="peer3.org2.wizchain.net"

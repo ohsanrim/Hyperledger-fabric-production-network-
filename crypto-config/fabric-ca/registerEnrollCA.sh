@@ -9,7 +9,7 @@ function createTLS(){
   fabric-ca-client enroll -d -u https://tls-ca-admin:tls-ca-adminpw@fabric-ca:10054 --tls.certfiles $HOME/testnet/crypto-config/fabric-ca/fabric-ca-client/tls-root-cert/tls-ca-cert.pem
   fabric-ca-client register -d --id.name peer0-org1 --id.secret peer0PW --id.type peer -u https://fabric-ca:10054 --tls.certfiles $HOME/testnet/crypto-config/fabric-ca/fabric-ca-client/tls-root-cert/tls-ca-cert.pem
   fabric-ca-client register -d --id.name peer1-org1 --id.secret peer1PW --id.type peer -u https://fabric-ca:10054 --tls.certfiles $HOME/testnet/crypto-config/fabric-ca/fabric-ca-client/tls-root-cert/tls-ca-cert.pem
-  fabric-ca-client register -d --id.name peer2-org2 --id.secret peer2PW --id.type peer -u https://fabric-ca:10054 --tls.certfiles $HOME/testnet/crypto-config/fabric-ca/fabric-ca-client/tls-root-cert/tls-ca-cert.pem
+  fabric-ca-client register -d --id.name peer0-org2 --id.secret peer0PW --id.type peer -u https://fabric-ca:10054 --tls.certfiles $HOME/testnet/crypto-config/fabric-ca/fabric-ca-client/tls-root-cert/tls-ca-cert.pem
   fabric-ca-client register -d --id.name peer3-org2 --id.secret peer3PW --id.type peer -u https://fabric-ca:10054 --tls.certfiles $HOME/testnet/crypto-config/fabric-ca/fabric-ca-client/tls-root-cert/tls-ca-cert.pem
   fabric-ca-client register -d --id.name orderer0-org --id.secret orderer0PW --id.type orderer -u https://fabric-ca:10054 --tls.certfiles $HOME/testnet/crypto-config/fabric-ca/fabric-ca-client/tls-root-cert/tls-ca-cert.pem
 
@@ -57,9 +57,9 @@ function createOrg2() {
   fabric-ca-client enroll -u https://admin:adminpw@fabric-ca:8054 --tls.certfiles $HOME/testnet/crypto-config/fabric-ca/fabric-ca-client/tls-root-cert/tls-ca-cert.pem
   { set +x; } 2>/dev/null
 
-  infoln "Registering peer2"
+  infoln "Registering peer0"
   set -x
-  fabric-ca-client register --id.name peer2 --id.secret peer2pw --id.type peer --tls.certfiles $HOME/testnet/crypto-config/fabric-ca/fabric-ca-client/tls-root-cert/tls-ca-cert.pem
+  fabric-ca-client register --id.name peer0_org2 --id.secret peer0pw --id.type peer --tls.certfiles $HOME/testnet/crypto-config/fabric-ca/fabric-ca-client/tls-root-cert/tls-ca-cert.pem
   { set +x; } 2>/dev/null
   
   infoln "Registering peer3"
