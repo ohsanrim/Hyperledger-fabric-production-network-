@@ -1,0 +1,4 @@
+[34m2021-04-19 16:06:31.954 KST [common.tools.configtxgen] main -> INFO 001[0m Loading configuration
+[34m2021-04-19 16:06:31.967 KST [common.tools.configtxgen.localconfig] Load -> INFO 002[0m Loaded configuration: /home/original/testnet/configtx.yaml
+[34m2021-04-19 16:06:31.967 KST [common.tools.configtxgen] doOutputChannelCreateTx -> INFO 003[0m Generating new channel configtx
+[34m2021-04-19 16:06:31.968 KST [common.tools.configtxgen] doOutputChannelCreateTx -> INFO 004[0m Writing new channel tx
