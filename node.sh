@@ -16,17 +16,18 @@ fi
 if [ "${MODE}" == "start" ]; then
   echo "networkUp"
 
-  IMAGE_TAG=$IMAGETAG docker-compose -f ${PWD}/docker/docker-compose-couch.yaml up -d 2>&1
-
-  echo $(sleep 3)
-
-  docker ps -a
-  
   if [ "${TYPE}" == "peer" ]; then
-  
+    infoln "couchDB start..."
+    IMAGE_TAG=$IMAGETAG docker-compose -f ${PWD}/docker/docker-compose-couch.yaml up -d 2>&1
+
+    echo $(sleep 3)
+    docker ps -a
+
     infoln "peer start..."
     
     peer node start >& ./test.log &
+
+    docker start $(docker ps -aq)
   
   elif  [ "${TYPE}" == "orderer" ]; then
   
@@ -47,6 +48,9 @@ elif [ "${MODE}" == "stop" ]; then
   if [ "${TYPE}" == "peer" ]; then
     infoln "peer stop..."
     kill $(ps -ef | grep -v grep | grep -v /bin/sh | grep "peer" | awk '{print $2}')
+    
+    #docker-compose -f ${PWD}/docker/docker-compose-couch.yaml down --volumes --remove-orphans
+    docker stop $(docker ps -aq)
   
   elif  [ "${TYPE}" == "orderer" ]; then
     infoln "orderer stop..."
@@ -54,7 +58,7 @@ elif [ "${MODE}" == "stop" ]; then
   
   fi
   
-  docker-compose -f ${PWD}/docker/docker-compose-couch.yaml down --volumes --remove-orphans
+  #docker-compose -f ${PWD}/docker/docker-compose-couch.yaml down --volumes --remove-orphans
 
 elif [ "${MOD}" == "create" ]; then
 
@@ -65,3 +69,4 @@ elif [ "${MOD}" == "create" ]; then
 else
   exit 1
 fi
+

@@ -90,4 +90,4 @@ createChannelTx
 #infoln "Setting anchor peer for org2..."
 #setAnchorPeer 2
 
-successln "Channel '$CHANNEL_NAME' joined"
+#successln "Channel '$CHANNEL_NAME' joined"

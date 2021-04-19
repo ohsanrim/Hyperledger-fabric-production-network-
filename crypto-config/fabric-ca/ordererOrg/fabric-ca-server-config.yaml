@@ -502,3 +502,8 @@ metrics:
 
         # prefix is prepended to all emitted statsd merics
         prefix: server
+cfg:
+  identities:
+    passwordattempts: 10
+    allowremove: true
+        
