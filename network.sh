@@ -211,8 +211,8 @@ infoln "Stopping network"
     
     docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf channel-artifacts log.txt *.tar.gz'
     
-    docker run --rm -v $(pwd):/data busybox sh -c 'cd /data && rm -rf /tmp/hyperledger'
     
+    rm -r /wizchain/hyperledger
     infoln "all files removed..."
 }
 

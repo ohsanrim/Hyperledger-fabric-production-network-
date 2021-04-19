@@ -1,5 +1,5 @@
-[34m2021-04-19 15:29:58.502 KST [localconfig] completeInitialization -> INFO 001[0m Kafka.Version unset, setting to 0.10.2.0
-[34m2021-04-19 15:29:58.503 KST [orderer.common.server] prettyPrintStruct -> INFO 002[0m Orderer config values:
+[34m2021-04-19 15:49:08.357 KST [localconfig] completeInitialization -> INFO 001[0m Kafka.Version unset, setting to 0.10.2.0
+[34m2021-04-19 15:49:08.359 KST [orderer.common.server] prettyPrintStruct -> INFO 002[0m Orderer config values:
 	General.ListenAddress = "orderer0.wizchain.net"
 	General.ListenPort = 7050
 	General.TLS.Enabled = true
@@ -91,23 +91,44 @@
 	Metrics.Statsd.Prefix = ""
 	ChannelParticipation.Enabled = false
 	ChannelParticipation.RemoveStorage = false
-[34m2021-04-19 15:29:58.512 KST [orderer.common.server] initializeServerConfig -> INFO 003[0m Starting orderer with TLS enabled
-panic: Error creating dir if missing: error creating dir [/wizchain/hyperledger/production/orderer/index/]: mkdir /wizchain: permission denied
-
-goroutine 1 [running]:
-github.com/hyperledger/fabric/common/ledger/util/leveldbhelper.(*DB).Open(0xc000080410)
-	/home/original/go/src/github.com/hyperledger/fabric/common/ledger/util/leveldbhelper/leveldb_helper.go:71 +0x2b8
-github.com/hyperledger/fabric/common/ledger/util/leveldbhelper.openDBAndCheckFormat(0xc000252880, 0x0, 0x0, 0x0)
-	/home/original/go/src/github.com/hyperledger/fabric/common/ledger/util/leveldbhelper/leveldb_provider.go:72 +0x133
-github.com/hyperledger/fabric/common/ledger/util/leveldbhelper.NewProvider(0xc000252880, 0xc000252880, 0x4, 0xc000408600)
-	/home/original/go/src/github.com/hyperledger/fabric/common/ledger/util/leveldbhelper/leveldb_provider.go:60 +0x2f
-github.com/hyperledger/fabric/common/ledger/blkstorage.NewProvider(0xc00000ea80, 0xc00000ea98, 0x10ed3d0, 0x16e6be8, 0x34, 0x0, 0x0)
-	/home/original/go/src/github.com/hyperledger/fabric/common/ledger/blkstorage/blockstore_provider.go:80 +0x165
-github.com/hyperledger/fabric/common/ledger/blockledger/fileledger.New(0xc00044c120, 0x28, 0x10ed3d0, 0x16e6be8, 0x20, 0x30, 0x7f705d7a8108, 0x30)
-	/home/original/go/src/github.com/hyperledger/fabric/common/ledger/blockledger/fileledger/factory.go:66 +0xf3
-github.com/hyperledger/fabric/orderer/common/server.createLedgerFactory(0xc000110900, 0x10ed3d0, 0x16e6be8, 0xc0000c0900, 0x405, 0x406, 0xc000268200, 0xf1, 0x200)
-	/home/original/go/src/github.com/hyperledger/fabric/orderer/common/server/util.go:29 +0x108
-github.com/hyperledger/fabric/orderer/common/server.Main()
-	/home/original/go/src/github.com/hyperledger/fabric/orderer/common/server/main.go:109 +0x608
-main.main()
-	/home/original/go/src/github.com/hyperledger/fabric/cmd/orderer/main.go:15 +0x25
+[34m2021-04-19 15:49:08.371 KST [orderer.common.server] initializeServerConfig -> INFO 003[0m Starting orderer with TLS enabled
+[34m2021-04-19 15:49:08.382 KST [blkstorage] NewProvider -> INFO 004[0m Creating new file ledger directory at /wizchain/hyperledger/production/orderer/chains
+[34m2021-04-19 15:49:08.386 KST [orderer.common.server] Main -> INFO 005[0m Bootstrapping the system channel
+[34m2021-04-19 15:49:08.387 KST [blkstorage] newBlockfileMgr -> INFO 006[0m Getting block information from block storage
+[34m2021-04-19 15:49:08.395 KST [orderer.common.server] selectClusterBootBlock -> INFO 007[0m Cluster boot block is bootstrap (genesis) block; Blocks Header.Number system-channel=0, bootstrap=0
+[34m2021-04-19 15:49:08.400 KST [orderer.common.server] Main -> INFO 008[0m Starting with system channel: system-channel, consensus type: etcdraft
+[34m2021-04-19 15:49:08.400 KST [orderer.common.server] Main -> INFO 009[0m Setting up cluster
+[34m2021-04-19 15:49:08.400 KST [orderer.common.server] reuseListener -> INFO 00a[0m Cluster listener is not configured, defaulting to use the general listener on port 7050
+[34m2021-04-19 15:49:08.400 KST [orderer.common.server] reuseListener -> INFO 00b[0m Cluster listener is not configured, defaulting to use the general listener on port 7050
+[34m2021-04-19 15:49:08.404 KST [orderer.common.cluster] loadVerifier -> INFO 00c[0m Loaded verifier for channel system-channel from config block at index 0
+[34m2021-04-19 15:49:08.405 KST [certmonitor] trackCertExpiration -> INFO 00d[0m The enrollment certificate will expire on 2022-04-19 06:38:00 +0000 UTC
+[34m2021-04-19 15:49:08.405 KST [certmonitor] trackCertExpiration -> INFO 00e[0m The server TLS certificate will expire on 2022-04-19 06:38:00 +0000 UTC
+[34m2021-04-19 15:49:08.405 KST [certmonitor] trackCertExpiration -> INFO 00f[0m The client TLS certificate will expire on 2022-04-19 06:38:00 +0000 UTC
+[34m2021-04-19 15:49:08.414 KST [orderer.consensus.etcdraft] HandleChain -> INFO 010[0m EvictionSuspicion not set, defaulting to 10m0s
+[34m2021-04-19 15:49:08.414 KST [orderer.consensus.etcdraft] createOrReadWAL -> INFO 011[0m No WAL data found, creating new WAL at path '/wizchain/hyperledger/production/orderer/etcdraft/wal/system-channel' channel=system-channel node=1
+[34m2021-04-19 15:49:08.417 KST [orderer.commmon.multichannel] Initialize -> INFO 012[0m Starting system channel 'system-channel' with genesis block hash 801b51c39c59a065a9494a7726f0c725215bcf142b18ffc352e9a7472a467f1b and orderer type etcdraft
+[34m2021-04-19 15:49:08.417 KST [orderer.consensus.etcdraft] Start -> INFO 013[0m Starting Raft node channel=system-channel node=1
+[34m2021-04-19 15:49:08.417 KST [orderer.common.cluster] Configure -> INFO 014[0m Entering, channel: system-channel, nodes: []
+[34m2021-04-19 15:49:08.417 KST [orderer.common.cluster] Configure -> INFO 015[0m Exiting
+[34m2021-04-19 15:49:08.417 KST [orderer.consensus.etcdraft] start -> INFO 016[0m Starting raft node as part of a new channel channel=system-channel node=1
+[34m2021-04-19 15:49:08.417 KST [orderer.consensus.etcdraft] becomeFollower -> INFO 017[0m 1 became follower at term 0 channel=system-channel node=1
+[34m2021-04-19 15:49:08.417 KST [orderer.consensus.etcdraft] newRaft -> INFO 018[0m newRaft 1 [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0] channel=system-channel node=1
+[34m2021-04-19 15:49:08.417 KST [orderer.consensus.etcdraft] becomeFollower -> INFO 019[0m 1 became follower at term 1 channel=system-channel node=1
+[34m2021-04-19 15:49:08.417 KST [orderer.common.server] Main -> INFO 01a[0m Starting orderer:
+ Version: 2.2.3
+ Commit SHA: 496c5f547
+ Go version: go1.16
+ OS/Arch: linux/amd64
+[34m2021-04-19 15:49:08.417 KST [orderer.consensus.etcdraft] run -> INFO 01b[0m This node is picked to start campaign channel=system-channel node=1
+[34m2021-04-19 15:49:08.418 KST [orderer.consensus.etcdraft] apply -> INFO 01c[0m Applied config change to add node 1, current nodes in channel: [1] channel=system-channel node=1
+[34m2021-04-19 15:49:08.418 KST [orderer.common.server] Main -> INFO 01d[0m Beginning to serve requests
+[34m2021-04-19 15:49:09.420 KST [orderer.consensus.etcdraft] Step -> INFO 01e[0m 1 is starting a new election at term 1 channel=system-channel node=1
+[34m2021-04-19 15:49:09.420 KST [orderer.consensus.etcdraft] becomePreCandidate -> INFO 01f[0m 1 became pre-candidate at term 1 channel=system-channel node=1
+[34m2021-04-19 15:49:09.420 KST [orderer.consensus.etcdraft] poll -> INFO 020[0m 1 received MsgPreVoteResp from 1 at term 1 channel=system-channel node=1
+[34m2021-04-19 15:49:09.420 KST [orderer.consensus.etcdraft] becomeCandidate -> INFO 021[0m 1 became candidate at term 2 channel=system-channel node=1
+[34m2021-04-19 15:49:09.420 KST [orderer.consensus.etcdraft] poll -> INFO 022[0m 1 received MsgVoteResp from 1 at term 2 channel=system-channel node=1
+[34m2021-04-19 15:49:09.420 KST [orderer.consensus.etcdraft] becomeLeader -> INFO 023[0m 1 became leader at term 2 channel=system-channel node=1
+[34m2021-04-19 15:49:09.420 KST [orderer.consensus.etcdraft] run -> INFO 024[0m raft.node: 1 elected leader 1 at term 2 channel=system-channel node=1
+[34m2021-04-19 15:49:09.423 KST [orderer.consensus.etcdraft] run -> INFO 025[0m Leader 1 is present, quit campaign channel=system-channel node=1
+[34m2021-04-19 15:49:09.423 KST [orderer.consensus.etcdraft] run -> INFO 026[0m Raft leader changed: 0 -> 1 channel=system-channel node=1
+[34m2021-04-19 15:49:09.423 KST [orderer.consensus.etcdraft] run -> INFO 027[0m Start accepting requests as Raft leader at block [0] channel=system-channel node=1
