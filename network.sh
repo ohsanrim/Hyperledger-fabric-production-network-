@@ -17,8 +17,8 @@ function removeUnwantedImages() {
 
 function networkUp(){
   infoln "mkdir wizchain.."
-  sudo mkdir wizchain
-  sudo chmod 777 wizchain
+  sudo mkdir /wizchain
+  sudo chmod 777 /wizchain
   
   if [  "$CRYPTO" == "Certificate Authorities" ]; then
     #start with CA
